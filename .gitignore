@@ -1,0 +1,23 @@
+# Dépendances
+vendor/
+node_modules/
+
+# Configuration locale et secrets
+.env
+
+# Logs
+*.log
+logs/
+
+# Tests
+test-results/
+playwright-report/
+
+# Fichiers d'upload de test
+public/images/dogs/
+
+# IDE et système
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
