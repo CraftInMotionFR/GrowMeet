@@ -4,15 +4,15 @@ session_start();
 // Connexion à la base de données
 $pdo = new PDO('mysql:host=localhost;dbname=growmeet;charset=utf8mb4', 'root', '');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+include 'includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>GrowMeet</title>
-</head>
-<body>
-    <h1>GrowMeet</h1>
-    <p>Bienvenue sur GrowMeet, l'application de gestion de cours d'éducation canine.</p>
-</body>
-</html>
+
+<h1>Bienvenue sur GrowMeet</h1>
+<p>Réservez des cours d'éducation canine pour votre chien près de chez vous.</p>
+
+<?php if (!isset($_SESSION['user_id'])): ?>
+    <p><a href="inscription.php">Créer un compte</a> ou <a href="connexion.php">se connecter</a></p>
+<?php endif; ?>
+
+<?php include 'includes/footer.php'; ?>
