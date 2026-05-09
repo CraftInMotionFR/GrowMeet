@@ -17,7 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $req = $pdo->prepare('SELECT id_user FROM users WHERE email = ?');
     $req->execute([$email]);
 
-    if ($req->fetch()) {
+    if (empty($nom) || empty($prenom) || empty($email) || empty($mdp)) {
+        $erreur = 'Veuillez remplir tous les champs.';
+    } elseif ($req->fetch()) {
         $erreur = 'Cet email est déjà utilisé.';
     } else {
         $hash = password_hash($mdp, PASSWORD_DEFAULT);
