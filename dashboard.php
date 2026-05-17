@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+// Il faut être connecté pour voir cette page
+if (!isset($_SESSION['user_id'])) {
+    header('Location: connexion.php');
+    exit;
+}
+
 // Connexion à la base de données
 $pdo = new PDO('mysql:host=localhost;dbname=growmeet;charset=utf8mb4', 'root', '');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
