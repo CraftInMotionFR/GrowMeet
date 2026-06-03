@@ -12,11 +12,12 @@ class Autoloader {
     }
 
     public function loadClass(string $className): void {
-        // Cherche dans Controllers, Core, Models
+        // Cherche dans Controllers, Core, Models, Views
         $dirs = [
             $this->baseDir . 'Controllers/',
             $this->baseDir . 'Core/',
             $this->baseDir . 'Models/',
+            $this->baseDir . 'Views/',
         ];
 
         foreach ($dirs as $dir) {
