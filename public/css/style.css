@@ -1,0 +1,77 @@
+body {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0;
+    background-color: #FDFBF7;
+    color: #2C2416;
+}
+
+section {
+    padding: 30px 0;
+}
+
+.secondary-bg {
+    background: #F5E6D34D;
+}
+
+.third-bg {
+    background: linear-gradient(90deg, #FF8C42 0%, #F89143 7.14%, #F29643 14.29%, #EB9B44 21.43%, #E49F44 28.57%, #DDA345 35.71%, #D5A745 42.86%, #CDAB46 50%, #C5AF47 57.14%, #BDB347 64.29%, #B4B648 71.43%, #ABB948 78.57%, #A1BD49 85.71%, #96C049 92.86%, #8BC34A 100%);
+}
+
+.third-bg h2,
+.third-bg p {
+    color: #ffffff;
+}
+
+.container {
+    margin: auto;
+    width: 80%;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    row-gap: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 48px;
+}
+
+h2 {
+    font-size: 2.25rem;
+    text-align: center;
+}
+
+h2 + p {
+    font-size: 1.125rem;
+    text-align: center;
+}
+
+p {
+    color: #6B5B45;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+a {
+    color: #FF8C42;
+}
+
+img {
+    border-radius: 10px;
+}
+
+.txt-center {
+    text-align: center;
+}
+
