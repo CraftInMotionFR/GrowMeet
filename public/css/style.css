@@ -75,3 +75,159 @@ img {
     text-align: center;
 }
 
+button.cto-green {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    border-style: double;
+    border-color: rgba(255, 167, 112, 0.50);
+    color: #2C2416;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 5px 15px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+button.cto-green:hover {
+    color: #000000;
+    background-color: #8BC34A;
+    border-color: #8BC34A;
+}
+
+button.cto-orange {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    border-style: double;
+    border-color: #FF8C42;
+    background-color: #FF8C42;
+    color: #000000;
+    border-radius: 10px;
+    padding: 5px 15px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+button.cto-orange:hover {
+    background-color: #ffa770;
+    border-color: #ffa770;
+    color: #2C2416;
+}
+
+button.cto-white {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    border-style: double;
+    border-color: #FF8C42;
+    background-color: #ffffff;
+    color: #2C2416;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+button.cto-white:hover {
+    background-color: #ffece0;
+    border-color: #ffa770;
+    color: #2C2416;
+}
+
+.btn-full {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-top: 0;
+    padding: 10px 20px;
+}
+
+.btn-sm {
+    padding: 4px 12px;
+    font-size: 0.875rem;
+    margin-top: 8px;
+}
+
+.btn-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-disabled:hover {
+    background-color: #FF8C42;
+    border-color: #FF8C42;
+}
+
+header {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 1px 1px #F5E6D3;
+}
+
+footer {
+    background-color: rgb(255, 255, 255);
+    padding-top: 15px;
+}
+
+header > div.nav,
+footer > div.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+header > div.nav > div.logo > a,
+footer > div.container > div.logo {
+    display: flex;
+    align-items: center;
+}
+
+header div.logo > a {
+    color: #000000;
+    text-decoration: none;
+}
+
+header div.logo > a > span {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+footer > div.container > div.logo {
+    font-size: 1rem;
+    font-weight: 600;
+    gap: 8px;
+}
+
+header > div.nav.container:last-child button.cto-green {
+    margin-right: 20px;
+}
+
+button.cto-orange + button.cto-green {
+    margin-left: 20px;
+}
+
+.flash-message {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 16px 0;
+}
+
+.flash-message-success {
+    background: rgba(139, 195, 74, 0.15);
+    color: #5a8a1a;
+}
+
+.flash-message-warning {
+    background: rgba(255, 140, 66, 0.15);
+    color: #c45f00;
+}
+
+.flash-message-error {
+    background: rgba(220, 53, 69, 0.15);
+    color: #a02834;
+}
+
