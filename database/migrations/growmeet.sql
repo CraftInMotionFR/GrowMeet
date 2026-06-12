@@ -41,3 +41,29 @@ CREATE TABLE member (
         ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB;
 
+CREATE TABLE breed (
+    id_breed      INT UNSIGNED    NOT NULL AUTO_INCREMENT,
+    name          VARCHAR(100)    NOT NULL,
+    PRIMARY KEY (id_breed)
+) ENGINE=InnoDB;
+
+CREATE TABLE dog (
+    id_dog          INT UNSIGNED    NOT NULL AUTO_INCREMENT,
+    name            VARCHAR(100)    NOT NULL,
+    gender          ENUM('male','female','unknown')
+                                    NOT NULL DEFAULT 'unknown',
+    birth_date      DATE                NULL,
+    weight          INT                 NULL COMMENT 'kg',
+    medical_record  TEXT                NULL,
+    image           VARCHAR(255)        NULL,
+    id_user         INT UNSIGNED    NOT NULL COMMENT 'FK → member',
+    id_breed        INT UNSIGNED        NULL,
+    PRIMARY KEY (id_dog),
+    CONSTRAINT fk_dog_member
+        FOREIGN KEY (id_user) REFERENCES member (id_user)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_dog_breed
+        FOREIGN KEY (id_breed) REFERENCES breed (id_breed)
+        ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
