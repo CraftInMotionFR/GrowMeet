@@ -53,7 +53,7 @@ CREATE TABLE dog (
     gender          ENUM('male','female','unknown')
                                     NOT NULL DEFAULT 'unknown',
     birth_date      DATE                NULL,
-    weight          INT                 NULL COMMENT 'kg',
+    weight          DECIMAL(5,2)        NULL COMMENT 'kg',
     medical_record  TEXT                NULL,
     image           VARCHAR(255)        NULL,
     id_user         INT UNSIGNED    NOT NULL COMMENT 'FK → member',
