@@ -183,3 +183,47 @@ CREATE INDEX idx_dog_owner           ON dog     (id_user);
 CREATE INDEX idx_message_sender      ON message (id_sender);
 CREATE INDEX idx_message_receiver    ON message (id_receiver);
 
+INSERT INTO breed (name) VALUES
+    ('Golden Retriever'),
+    ('Labrador Retriever'),
+    ('Border Collie'),
+    ('Berger Allemand'),
+    ('Chihuahua'),
+    ('Welsh Corgi'),
+    ('Berger Australien'),
+    ('Jack Russel Terrier'),
+    ('Cavalier King Charles'),
+    ('Caniche'),
+    ('Beagle'),
+    ('Husky Sibérien'),
+    ('Bulldog Français'),
+    ('Bulldog Anglais'),
+    ('Boxer'),
+    ('Shih Tzu'),
+    ('Carlin'),
+    ('Cocker Spaniel'),
+    ('Teckel'),
+    ('Dalmatien'),
+    ('Rottweiler'),
+    ('Staffordshire Bull Terrier'),
+    ('Dogue Allemand'),
+    ('Bull Terrier'),
+    ('Cane Corso'),
+    ('Dobermann'),
+    ('Bouvier Bernois'),
+    ('Bichon'),
+    ('Épagneul'),
+    ('Braque de Weimar'),
+    ('Beauceron'),
+    ('Akita Inu'),
+    ('Shiba Inu'),
+    ('Lévrier'),
+    ('Malinois'),
+    ('Spitz'),
+    ('Yorkshire Terrier'),
+    ('Autre');
+
+-- Compte administrateur de démo (email: admin@growmeet.com / mot de passe: Admin1234!)
+INSERT INTO users (last_name, first_name, email, password_hash) VALUES
+    ('Admin', 'GrowMeet', 'admin@growmeet.com', '$2y$10$zV1/LC/LUQkJzdRE1XFXd.xHo/u1UkBaHoYXsbAXcwcoHubEImp2.');
+INSERT INTO administrator (id_user) VALUES (LAST_INSERT_ID());
