@@ -67,3 +67,119 @@ CREATE TABLE dog (
         ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB;
 
+CREATE TABLE course_type (
+    id_course_type  INT UNSIGNED    NOT NULL AUTO_INCREMENT,
+    name            VARCHAR(150)    NOT NULL,
+    description     TEXT                NULL,
+    min_age  DATE   NOT NULL,
+    max_age  DATE   NULL COMMENT 'maximum age (NULL = no limit)',
+    id_user         INT UNSIGNED    NOT NULL COMMENT 'FK → administrator who created it',
+    PRIMARY KEY (id_course_type),
+    CONSTRAINT fk_course_type_admin
+        FOREIGN KEY (id_user) REFERENCES administrator (id_user)
+        ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE skill (
+    id_skill      INT UNSIGNED    NOT NULL AUTO_INCREMENT,
+    name          VARCHAR(150)    NOT NULL,
+    level         TINYINT UNSIGNED NOT NULL DEFAULT 1 COMMENT '1=beginner … 5=expert',
+    PRIMARY KEY (id_skill)
+) ENGINE=InnoDB;
+
+CREATE TABLE coach_course_type (
+    id_user         INT UNSIGNED    NOT NULL COMMENT 'FK → coach',
+    id_course_type  INT UNSIGNED    NOT NULL,
+    PRIMARY KEY (id_user, id_course_type),
+    CONSTRAINT fk_cct_coach
+        FOREIGN KEY (id_user) REFERENCES coach (id_user)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_cct_course_type
+        FOREIGN KEY (id_course_type) REFERENCES course_type (id_course_type)
+        ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE course_type_skill (
+    id_course_type  INT UNSIGNED    NOT NULL,
+    id_skill        INT UNSIGNED    NOT NULL,
+    PRIMARY KEY (id_course_type, id_skill),
+    CONSTRAINT fk_cts_course_type
+        FOREIGN KEY (id_course_type) REFERENCES course_type (id_course_type)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_cts_skill
+        FOREIGN KEY (id_skill) REFERENCES skill (id_skill)
+        ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE dog_skill (
+    id_dog        INT UNSIGNED    NOT NULL,
+    id_skill      INT UNSIGNED    NOT NULL,
+    acquired_at   DATE                NULL,
+    PRIMARY KEY (id_dog, id_skill),
+    CONSTRAINT fk_ds_dog
+        FOREIGN KEY (id_dog) REFERENCES dog (id_dog)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_ds_skill
+        FOREIGN KEY (id_skill) REFERENCES skill (id_skill)
+        ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE course (
+    id_course       INT UNSIGNED    NOT NULL AUTO_INCREMENT,
+    name            VARCHAR(150)    NOT NULL,
+    date            DATE            NOT NULL,
+    start_time      TIME            NOT NULL,
+    end_time        TIME            NOT NULL,
+    min_participants TINYINT UNSIGNED NOT NULL DEFAULT 1,
+    max_participants TINYINT UNSIGNED NOT NULL DEFAULT 10,
+    status          ENUM('open','full','cancelled','completed')
+                                    NOT NULL DEFAULT 'open',
+    id_user         INT UNSIGNED    NOT NULL COMMENT 'FK → coach',
+    id_course_type  INT UNSIGNED    NOT NULL,
+    PRIMARY KEY (id_course),
+    CONSTRAINT fk_course_coach
+        FOREIGN KEY (id_user) REFERENCES coach (id_user)
+        ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT fk_course_type
+        FOREIGN KEY (id_course_type) REFERENCES course_type (id_course_type)
+        ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE booking (
+    id_dog          INT UNSIGNED    NOT NULL,
+    id_course       INT UNSIGNED    NOT NULL,
+    booking_date    DATETIME        NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    status          ENUM('pending','confirmed','cancelled','waiting')
+                                    NOT NULL DEFAULT 'pending',
+    review          TEXT                NULL,
+    PRIMARY KEY (id_dog, id_course),
+    CONSTRAINT fk_booking_dog
+        FOREIGN KEY (id_dog) REFERENCES dog (id_dog)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_booking_course
+        FOREIGN KEY (id_course) REFERENCES course (id_course)
+        ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE message (
+    id_message    INT UNSIGNED    NOT NULL AUTO_INCREMENT,
+    content       TEXT            NOT NULL,
+    sent_at       DATETIME        NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    id_sender     INT UNSIGNED    NOT NULL COMMENT 'FK → user (envoyer)',
+    id_receiver   INT UNSIGNED    NOT NULL COMMENT 'FK → user (recevoir)',
+    PRIMARY KEY (id_message),
+    CONSTRAINT fk_message_sender
+        FOREIGN KEY (id_sender) REFERENCES users (id_user)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_message_receiver
+        FOREIGN KEY (id_receiver) REFERENCES users (id_user)
+        ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+CREATE INDEX idx_course_date         ON course  (date);
+CREATE INDEX idx_course_status       ON course  (status);
+CREATE INDEX idx_booking_status      ON booking (status);
+CREATE INDEX idx_dog_owner           ON dog     (id_user);
+CREATE INDEX idx_message_sender      ON message (id_sender);
+CREATE INDEX idx_message_receiver    ON message (id_receiver);
+
