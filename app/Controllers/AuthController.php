@@ -16,7 +16,7 @@ class AuthController extends Controller {
 
     // Traitement connexion (POST /login)
     public function login(): void {
-        $email = $_POST['email'] ?? '';
+        $email = trim($_POST['email'] ?? '');
         $password = $_POST['password'] ?? '';
         $errors = [];
 
@@ -56,7 +56,7 @@ class AuthController extends Controller {
         $this->render('auth/login', [
             'page_title' => 'Connexion',
             'errors' => $errors,
-            'old_email' => $email,
+            'old_email' => htmlspecialchars($email),
         ]);
     }
 
