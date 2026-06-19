@@ -292,6 +292,524 @@ div.gallery.flex img {
     width: inherit;
 }
 
+.auth-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    background: linear-gradient(135deg, #F5E6D3 0%, #FDFBF7 60%, rgba(139, 195, 74, 0.2) 100%);
+}
+
+.auth-container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.auth-card {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    border: 1.6px solid rgba(255, 140, 66, 0.20);
+    padding: 40px;
+    flex: 1;
+    max-width: 480px;
+}
+
+.auth-card-wide {
+    max-width: 600px;
+    flex: 1.3;
+}
+
+.auth-header {
+    margin-bottom: 32px;
+}
+
+.auth-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 8px 0;
+    color: #2C2416;
+}
+
+.auth-header p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #2C2416;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+    width: 100%;
+    padding: 10px 12px 10px 40px;
+    border: 1.6px solid rgba(255, 140, 66, 0.30);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    color: #2C2416;
+    background: #FDFBF7;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+    outline: none;
+    border-color: #FF8C42;
+    background: #ffffff;
+}
+
+.form-group.error .input-wrapper input,
+.form-group.error .input-wrapper select {
+    border-color: #D4183D;
+}
+
+.field-error {
+    margin: 4px 0 0;
+}
+
+.input-wrapper input::placeholder {
+    color: #6B5B45;
+    opacity: 0.6;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    color: #6B5B45;
+    font-size: 1.125rem;
+    pointer-events: none;
+}
+
+.input-toggle {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6B5B45;
+    font-size: 1.125rem;
+    padding: 4px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.input-toggle:hover {
+    color: #2C2416;
+}
+
+.input-wrapper-select::after {
+    content: '';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 5px solid transparent;
+    border-top-color: #6B5B45;
+    pointer-events: none;
+}
+
+.forgot-link {
+    font-size: 0.8125rem;
+    color: #FF8C42;
+    text-decoration: none;
+    align-self: flex-end;
+    margin-top: 4px;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.form-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.875rem;
+    color: #6B5B45;
+}
+
+.form-check label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.form-check-between {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-check-between label {
+    align-items: center;
+}
+
+.auth-container-single {
+    justify-content: center;
+}
+
+.dog-form-subheader {
+    margin-bottom: 24px;
+}
+
+.dog-form-subheader h4 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2C2416;
+}
+
+.dog-form-subheader p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.dog-photo-picker {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.dog-photo-preview {
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+    border-radius: 1rem;
+    background: #F5E6D3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #6B5B45;
+}
+
+.btn-file {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    margin-top: 0;
+}
+
+.dog-photo-hint {
+    font-size: 0.75rem;
+    color: #6B5B45;
+    margin: 8px 0 0;
+}
+
+.dog-form-tip {
+    background: #F5E6D3;
+    border-radius: 0.75rem;
+    padding: 16px;
+}
+
+.dog-form-tip p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #2C2416;
+}
+
+.form-check input[type="checkbox"] {
+    margin-top: 2px;
+    accent-color: #FF8C42;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.form-check a {
+    color: #FF8C42;
+    text-decoration: none;
+}
+
+.form-check a:hover {
+    text-decoration: underline;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.form-actions button {
+    flex: 1;
+}
+
+.radio-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+    accent-color: #FF8C42;
+    width: 16px;
+    height: 16px;
+}
+
+.radio-label {
+    font-size: 0.9rem;
+    color: #2C2416;
+    padding: 6px 14px;
+    border: 1.6px solid rgba(255, 140, 66, 0.30);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.radio-option input[type="radio"]:checked+.radio-label {
+    background: rgba(255, 140, 66, 0.10);
+    border-color: #FF8C42;
+    color: #FF8C42;
+    font-weight: 500;
+}
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 24px 0 16px;
+    color: #6B5B45;
+    font-size: 0.875rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 140, 66, 0.20);
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.auth-footer p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.auth-footer a {
+    color: #FF8C42;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+.auth-visual {
+    flex: 1;
+    background: linear-gradient(135deg, #FF8C42 0%, #8BC34A 100%);
+    border-radius: 1.5rem;
+    padding: 48px 40px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.auth-visual h2 {
+    color: #ffffff;
+    font-size: 1.75rem;
+    text-align: left;
+    line-height: 1.3;
+    margin: 16px 0 12px;
+}
+
+.auth-visual p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    margin: 0 0 24px;
+}
+
+.auth-badge {
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.auth-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.auth-feature-item .check-icon {
+    background: rgba(255, 255, 255, 0.25);
+    min-width: 24px;
+}
+
+.register-steps {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    gap: 0;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+.step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 140, 66, 0.15);
+    border: 2px solid rgba(255, 140, 66, 0.30);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #6B5B45;
+}
+
+.step.active .step-circle {
+    background: #FF8C42;
+    border-color: #FF8C42;
+    color: #ffffff;
+}
+
+.step span {
+    font-size: 0.75rem;
+    color: #6B5B45;
+    white-space: nowrap;
+}
+
+.step-line {
+    flex: 1;
+    height: 2px;
+    background: rgba(255, 140, 66, 0.20);
+    margin-bottom: 20px;
+}
+
+.confirm-block {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+
+.confirm-block h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2C2416;
+    margin: 8px 0 4px;
+}
+
+.confirm-block p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.summary-card {
+    background: #F5E6D34D;
+    border: 1.6px solid rgba(255, 140, 66, 0.20);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.summary-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.summary-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #FF8C42;
+}
+
+.summary-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #2C2416;
+}
+
+.summary-row i {
+    color: #6B5B45;
+    font-size: 1rem;
+}
+
 .flash-message {
     padding: 12px 16px;
     border-radius: 8px;
@@ -347,6 +865,67 @@ div.gallery.flex img {
 
 .stat-card-icon-green {
     background: rgba(139, 195, 74, 0.10);
+}
+
+.form-errors {
+    background: rgba(212, 24, 61, 0.07);
+    border: 1.6px solid rgba(212, 24, 61, 0.25);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+}
+
+.form-error {
+    color: #D4183D;
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.form-criteria {
+    margin-top: 8px;
+}
+
+.form-criteria p {
+    margin: 0 0 4px;
+    font-size: 0.8125rem;
+    color: #6B5B45;
+}
+
+.form-criteria ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.form-criteria li {
+    font-size: 0.8125rem;
+    color: #6B5B45;
+    padding-left: 20px;
+    position: relative;
+}
+
+.form-criteria li::before {
+    content: "\2022";
+    position: absolute;
+    left: 6px;
+}
+
+.form-criteria li.success {
+    color: #8BC34A;
+}
+
+.form-criteria li.success::before {
+    content: "\2713";
+    left: 4px;
+}
+
+.form-criteria li.error {
+    color: #D4183D;
 }
 
 .error-404 {
