@@ -2,6 +2,7 @@
 
 // Routes publiques (ni auth ni guest)
 $router->get('/', 'HomeController', 'index');
+$router->get('/courses', 'CourseController', 'index');
 
 // Routes guest - redirige vers /dashboard si déjà connecté
 $router->get('/login', 'AuthController', 'loginForm')->middleware('guest');
