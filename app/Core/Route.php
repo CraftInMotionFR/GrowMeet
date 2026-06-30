@@ -25,7 +25,7 @@ class Route {
         if ($this->method !== $method) return null;
 
         $pattern = preg_replace('#\{([a-zA-Z_]+)\}#', '([^/]+)', $this->path);
-        $pattern = "#{$pattern}#";
+        $pattern = "#^{$pattern}$#";
 
         if (!preg_match($pattern, $url, $matches)) return null;
 
