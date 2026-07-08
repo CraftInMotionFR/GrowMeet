@@ -1144,3 +1144,114 @@ div.gallery.flex img {
 .error-404-btn {
     margin-top: 16px;
 }
+/* Page "Mes chiens" : vue carte */
+.dog-profile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.dog-profile-card {
+    background: #ffffff;
+    border-radius: 1.25rem;
+    border: 1.6px solid rgba(255, 140, 66, 0.20);
+    overflow: hidden;
+}
+
+.dog-profile-card-img {
+    height: 200px;
+    background: #F5E6D3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #FF8C42;
+}
+
+.dog-profile-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.dog-profile-card-body {
+    padding: 20px;
+}
+
+.dog-profile-card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dog-profile-card-title h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.dog-profile-card-title a {
+    color: #6B5B45;
+    font-size: 1.25rem;
+}
+
+.dog-profile-card-breed {
+    margin: 4px 0 12px;
+}
+
+.dog-profile-card-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.dog-profile-card-stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255, 140, 66, 0.20);
+    font-size: 0.875rem;
+    color: #6B5B45;
+}
+
+.dog-profile-card-stat strong {
+    color: #2C2416;
+}
+
+.dog-profile-card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.dog-profile-card-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px;
+    border-radius: 0.75rem;
+    background: #FDFBF7;
+    border: 1.2px solid rgba(255, 140, 66, 0.20);
+    color: #2C2416;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.dog-profile-card-btn:hover {
+    background: rgba(255, 140, 66, 0.10);
+}
+
+@media (min-width: 600px) {
+    .dog-profile-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .dog-profile-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
