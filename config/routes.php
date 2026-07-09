@@ -3,6 +3,7 @@
 // Routes publiques (ni auth ni guest)
 $router->get('/', 'HomeController', 'index');
 $router->get('/courses', 'CourseController', 'index');
+$router->get('/courses/{id}', 'CourseController', 'show');
 
 // Routes guest - redirige vers /dashboard si déjà connecté
 $router->get('/login', 'AuthController', 'loginForm')->middleware('guest');
@@ -12,6 +13,8 @@ $router->post('/register', 'AuthController', 'register')->middleware('guest');
 
 // Routes protégées - redirige vers /login si non connecté
 $router->get('/logout', 'AuthController', 'logout')->middleware('auth');
+$router->post('/courses/{id}/join', 'CourseController', 'join')->middleware('auth');
+$router->post('/courses/{id}/cancel', 'CourseController', 'cancel')->middleware('auth');
 $router->get('/dogs', 'DogController', 'index')->middleware('auth');
 $router->get('/dogs/create', 'DogController', 'create')->middleware('auth');
 $router->post('/dogs', 'DogController', 'store')->middleware('auth');
