@@ -111,6 +111,8 @@ class DogController extends Controller {
 
         $dog = $this->findOwnDog((int) $id);
 
+        // Annule d'abord les inscriptions pour libérer les places et promouvoir la liste d'attente
+        (new BookingManager())->cancelAllForDog((int) $id);
         (new DogManager())->deleteDog((int) $id, $_SESSION['user']['id']);
         $this->deleteDogPhoto($dog['image']);
 
