@@ -208,6 +208,97 @@ button.cto-orange + button.cto-green {
     margin-left: 20px;
 }
 
+.header-dashboard {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(255, 140, 66, 0.20);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    gap: 20px;
+}
+
+.nav-dashboard .logo a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #2C2416;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.dashboard-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #6B5B45;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: background 0.2s;
+}
+
+.nav-link i {
+    font-size: 1.25rem;
+}
+
+.nav-link:hover {
+    background: rgba(255, 140, 66, 0.08);
+    color: #2C2416;
+}
+
+.nav-link-active {
+    background: rgba(255, 140, 66, 0.10);
+    color: #FF8C42;
+    font-weight: 500;
+}
+
+.nav-link-active i {
+    color: #FF8C42;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #6B5B45;
+    font-size: 0.875rem;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.nav-profile i {
+    font-size: 1.25rem;
+}
+
+.nav-profile:hover {
+    background: rgba(255, 140, 66, 0.08);
+    color: #2C2416;
+}
+
 .card {
     border-radius: 1.25rem;
     border: 1.6px solid rgba(255, 140, 66, 0.20);
@@ -1381,6 +1472,15 @@ div.gallery.flex img {
     .dog-profile-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+/* Liens désactivés (fonctionnalité pas encore disponible) */
+.nav-link-disabled,
+.nav-link-disabled:hover {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+    background: transparent;
 }
 
 /* Liens vers la fiche d'un cours */
