@@ -13,6 +13,7 @@ $router->post('/register', 'AuthController', 'register')->middleware('guest');
 
 // Routes protégées - redirige vers /login si non connecté
 $router->get('/dashboard', 'DashboardController', 'index')->middleware('auth');
+$router->get('/profile', 'ProfileController', 'index')->middleware('auth');
 $router->get('/logout', 'AuthController', 'logout')->middleware('auth');
 $router->post('/courses/{id}/join', 'CourseController', 'join')->middleware('auth');
 $router->post('/courses/{id}/cancel', 'CourseController', 'cancel')->middleware('auth');
