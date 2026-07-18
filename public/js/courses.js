@@ -23,4 +23,6 @@ function filterCourses() {
         }
     });
 
+    document.getElementById('courses-count').textContent = visible + ' cours';
+    document.getElementById('no-results').style.display  = visible === 0 ? 'flex' : 'none';
 }
