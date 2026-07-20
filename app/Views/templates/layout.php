@@ -5,7 +5,8 @@ $dashboardPages = ['dashboard', 'courses', 'dogs', 'profile', 'admin-course-type
 $isAdmin = ($_SESSION['user']['role'] ?? null) === 'administrator';
 $isCoach = ($_SESSION['user']['role'] ?? null) === 'coach';
 $isStaff = $isAdmin || $isCoach;
-$isDashboardPage = isset($current_page) && in_array($current_page, $dashboardPages);
+$isDashboardPage = $isLoggedIn && isset($current_page) && in_array($current_page, $dashboardPages);
+$isCoursePage = isset($current_page) && in_array($current_page, $dashboardPages);
 // Page d'accueil de l'espace connecté selon le rôle : les admins/coachs n'ont pas de dashboard "chiens"
 $homeUrl = $isAdmin ? '/admin/course-types' : ($isCoach ? '/admin/sessions' : '/dashboard');
 
@@ -111,7 +112,7 @@ $pageJs = $jsFiles[$current_page ?? ''] ?? ['script.js'];
         </div>
     </header>
 <?php endif; ?>
-<main <?= $isDashboardPage ? 'class="main-dashboard"' : '' ?>>
+<main <?= $isCoursePage ? 'class="main-dashboard"' : '' ?>>
     <?php if (!empty($flash)): ?>
         <div class="container">
             <div class="flash-message flash-message-<?= htmlspecialchars($flash['type']) ?>">
