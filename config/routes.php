@@ -23,3 +23,11 @@ $router->post('/dogs', 'DogController', 'store')->middleware('auth');
 $router->get('/dogs/{id}/edit', 'DogController', 'edit')->middleware('auth');
 $router->post('/dogs/{id}/update', 'DogController', 'update')->middleware('auth');
 $router->post('/dogs/{id}/delete', 'DogController', 'delete')->middleware('auth');
+
+// Routes admin - restriction de rôle vérifiée dans chaque contrôleur
+$router->get('/admin/course-types', 'CourseTypeController', 'index')->middleware('auth');
+$router->get('/admin/course-types/create', 'CourseTypeController', 'create')->middleware('auth');
+$router->post('/admin/course-types', 'CourseTypeController', 'store')->middleware('auth');
+$router->get('/admin/course-types/{id}/edit', 'CourseTypeController', 'edit')->middleware('auth');
+$router->post('/admin/course-types/{id}/update', 'CourseTypeController', 'update')->middleware('auth');
+$router->post('/admin/course-types/{id}/delete', 'CourseTypeController', 'delete')->middleware('auth');
