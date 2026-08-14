@@ -36,3 +36,5 @@ $router->get('/admin/coaches', 'CoachController', 'index')->middleware('auth');
 $router->get('/admin/coaches/create', 'CoachController', 'create')->middleware('auth');
 $router->post('/admin/coaches', 'CoachController', 'store')->middleware('auth');
 $router->post('/admin/coaches/{id}/delete', 'CoachController', 'delete')->middleware('auth');
+
+$router->get('/admin/sessions', 'CourseController', 'adminIndex')->middleware('auth');
