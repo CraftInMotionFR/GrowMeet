@@ -5,6 +5,8 @@ class CourseTypeController extends Controller {
 
     // Liste des types de cours (GET /admin/course-types)
     public function index(): void {
+        $this->requireAdmin();
+
         $manager = new CourseTypeManager();
         $courseTypes = array_map(fn($ct) => $ct + [
             'age_label' => $manager->formatAgeRange($ct['min_age'], $ct['max_age']),
@@ -20,6 +22,8 @@ class CourseTypeController extends Controller {
 
     // Formulaire de création (GET /admin/course-types/create)
     public function create(): void {
+        $this->requireAdmin();
+
         $this->render('admin/course-types/create', [
             'page_title' => 'Nouveau type de cours',
             'current_page' => 'admin-course-types',
@@ -29,6 +33,8 @@ class CourseTypeController extends Controller {
 
     // Traitement de la création (POST /admin/course-types)
     public function store(): void {
+        $this->requireAdmin();
+
         [$data, $errors] = $this->validate($_POST);
 
         if (!empty($errors)) {
@@ -48,6 +54,8 @@ class CourseTypeController extends Controller {
 
     // Formulaire d'édition (GET /admin/course-types/{id}/edit)
     public function edit(string $id): void {
+        $this->requireAdmin();
+
         $courseType = (new CourseTypeManager())->findById((int) $id);
 
         if (!$courseType) {
@@ -75,6 +83,8 @@ class CourseTypeController extends Controller {
 
     // Traitement de la modification (POST /admin/course-types/{id}/update)
     public function update(string $id): void {
+        $this->requireAdmin();
+
         $courseTypeManager = new CourseTypeManager();
         $courseType = $courseTypeManager->findById((int) $id);
 
@@ -102,6 +112,8 @@ class CourseTypeController extends Controller {
 
     // Suppression (POST /admin/course-types/{id}/delete)
     public function delete(string $id): void {
+        $this->requireAdmin();
+
         try {
             (new CourseTypeManager())->delete((int) $id);
             $this->redirect('/admin/course-types?status=course-type-deleted');
