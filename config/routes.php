@@ -43,3 +43,5 @@ $router->post('/admin/sessions', 'CourseController', 'adminStore')->middleware('
 $router->get('/admin/sessions/{id}/edit', 'CourseController', 'adminEdit')->middleware('auth');
 $router->post('/admin/sessions/{id}/update', 'CourseController', 'adminUpdate')->middleware('auth');
 $router->post('/admin/sessions/{id}/delete', 'CourseController', 'adminDelete')->middleware('auth');
+$router->get('/admin/sessions/{id}/bookings', 'CourseController', 'adminBookings')->middleware('auth');
+$router->post('/admin/sessions/{id}/bookings/{dogId}/cancel', 'CourseController', 'adminCancelBooking')->middleware('auth');
