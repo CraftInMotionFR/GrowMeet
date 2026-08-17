@@ -38,3 +38,8 @@ $router->post('/admin/coaches', 'CoachController', 'store')->middleware('auth');
 $router->post('/admin/coaches/{id}/delete', 'CoachController', 'delete')->middleware('auth');
 
 $router->get('/admin/sessions', 'CourseController', 'adminIndex')->middleware('auth');
+$router->get('/admin/sessions/create', 'CourseController', 'adminCreate')->middleware('auth');
+$router->post('/admin/sessions', 'CourseController', 'adminStore')->middleware('auth');
+$router->get('/admin/sessions/{id}/edit', 'CourseController', 'adminEdit')->middleware('auth');
+$router->post('/admin/sessions/{id}/update', 'CourseController', 'adminUpdate')->middleware('auth');
+$router->post('/admin/sessions/{id}/delete', 'CourseController', 'adminDelete')->middleware('auth');
