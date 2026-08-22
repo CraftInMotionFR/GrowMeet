@@ -16,7 +16,7 @@ class Env {
                 continue;
             }
             [$key, $value] = array_pad(explode('=', $line, 2), 2, '');
-            self::$vars[trim($key)] = trim($value);
+            self::$vars[trim($key)] = trim(trim($value), '"\'');
         }
     }
 
