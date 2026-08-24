@@ -6,7 +6,8 @@ Env::load(__DIR__ . '/../.env');
 
 return [
     'host' => Env::get('DB_HOST', 'localhost'),
-    'dbname' => Env::get('DB_NAME', 'growmeet'),
+    // GROWMEET_DB permet de pointer vers une autre base (tests e2e : growmeet_test)
+    'dbname' => Env::get('GROWMEET_DB', Env::get('DB_NAME', 'growmeet')),
     'username' => Env::get('DB_USER', 'root'),
     'password' => Env::get('DB_PASS', ''),
     'charset' => Env::get('DB_CHARSET', 'utf8mb4'),
