@@ -1,0 +1,11 @@
+{
+  "name": "growmeet",
+  "private": true,
+  "scripts": {
+    "test:db": "php tests/reset-test-db.php",
+    "test:e2e": "php tests/reset-test-db.php && playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0"
+  }
+}
