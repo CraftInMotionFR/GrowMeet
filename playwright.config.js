@@ -9,6 +9,7 @@ module.exports = defineConfig({
   retries: 0,
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {
+    baseURL: 'http://localhost:8001',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
   },
