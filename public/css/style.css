@@ -1780,6 +1780,167 @@ div.gallery.flex img {
     font-weight: 400;
 }
 
+/* Responsive */
+@media (max-width: 600px) {
+    header {
+        padding: 5px 0;
+    }
+
+    header > div.nav > div.logo {
+        padding-bottom: 0;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .auth-card {
+        padding: 28px 20px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-dashboard {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0;
+        border-bottom: none;
+        border-top: 1px solid rgba(255, 140, 66, 0.20);
+    }
+
+    body:has(.header-dashboard) {
+        padding-bottom: 70px;
+    }
+
+    .nav-dashboard {
+        padding: 6px 0;
+        gap: 0;
+    }
+
+    .nav-dashboard .logo,
+    .dashboard-nav span,
+    .nav-profile span {
+        display: none;
+    }
+
+    .dashboard-nav {
+        flex: 1;
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    .nav-actions {
+        gap: 0;
+    }
+
+    .nav-link,
+    .nav-profile {
+        padding: 10px 14px;
+    }
+
+    .nav-link i,
+    .nav-profile i {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 600px) {
+
+    header > div.nav,
+    footer > div.container {
+        padding: 10px 0 10px 0;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 768px) {
+    .auth-visual {
+        display: flex;
+    }
+
+    .courses-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    footer {
+        padding-top: 0;
+    }
+
+    .grid-container {
+        grid-template-columns: auto auto auto;
+        column-gap: 20px;
+    }
+
+    section {
+        padding: 80px 0;
+    }
+
+    h1 {
+        font-size: 50px;
+        font-weight: 700;
+        line-height: 48px;
+    }
+
+    button.cto-green {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    button.cto-orange {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    #hero-banner > div.container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    #hero-banner > div.container > div#hero-text > div.flex {
+        padding-bottom: 0;
+    }
+
+    div.gallery.flex {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: unset;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    div.gallery.flex img {
+        width: calc(25% - 15px);
+    }
+
+    .courses-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr 380px;
+    }
+
+    .dashboard-grid-even {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 .icon-orange {
     color: #FF8C42;
 }
