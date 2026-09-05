@@ -6,7 +6,7 @@ Application web de gestion de cours d'éducation canine (PHP / MySQL) : les prop
 
 Architecture MVC maison, sans framework :
 
-- `app/Core` : autoloader, routeur et routes
+- `app/Core` : autoloader, routeur, routes et chargement du `.env`
 - `app/Controllers` : contrôleurs
 - `app/Models` : managers (accès PDO à la base)
 - `app/Views` : vues et layout
@@ -15,11 +15,22 @@ Architecture MVC maison, sans framework :
 - `public` : point d'entrée, CSS, JS et images
 - `tests/e2e` : tests de bout en bout (Playwright)
 
+## Configuration
+
+Les identifiants de la base ne sont pas dans le code : ils sont lus dans un fichier `.env` à la racine, ignoré par Git.
+
+```
+cp .env.example .env
+```
+
+Puis adapter les valeurs (`DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASS`, `DB_CHARSET`).
+
 ## Installation
 
-1. Importer `database/migrations/growmeet.sql` dans MySQL.
-2. Lancer le serveur PHP intégré : `php -S localhost:8000 -t public`
-3. Ouvrir http://localhost:8000
+1. Créer le fichier `.env` (voir ci-dessus).
+2. Importer `database/migrations/growmeet.sql` dans MySQL.
+3. Lancer le serveur PHP intégré : `php -S localhost:8000 -t public`
+4. Ouvrir http://localhost:8000
 
 Compte administrateur de démo : `admin@growmeet.com` / `Admin1234!`
 
